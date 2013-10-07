@@ -13,20 +13,20 @@ jQuery(function($){
 			dest.html(remaining);
 			/* Over 50%, change colour to orange */
 			p=(100*remaining)/maxlength;
-			console.log(p)
 			if(p<25){
-				dest.addClass('orange');
-			}else if(p<50){
 				dest.addClass('red');
+			}else if(p<59){
+				dest.addClass('orange');
 			}else{
 				dest.removeClass('orange red');
 			}
 		};
 		 	
 		this.each(function(i, el) {
-			var maxlength = $(this).find('.maxlength').html();
+
+            var source = $(this).find(options.source);
+            var maxlength = source.attr('maxlength');
 			var dest = $(this).find(options.dest);
-			var source = $(this).find(options.source);
 			source.keyup(function(){
 				calculate(source, dest, maxlength)
 			});
@@ -37,7 +37,7 @@ jQuery(function($){
 	};
 	
 	$(".charsleft-input").charsLeft({
-		'source':'input',
-		'dest':".count",
+		'source':'textarea, input',
+		'dest':".count"
 	});
 });
