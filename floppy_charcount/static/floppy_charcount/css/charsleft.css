@@ -6,7 +6,7 @@
 	margin-left: 0.5em;
 	color: #ccc;
 	line-height: 23px;
-    float: right;
+        /* float: right; */
 }
 .charsleft span .count{
 	color: #333;
