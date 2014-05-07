@@ -1,4 +1,4 @@
 <span class="charsleft charsleft-input">
-    <span class="count">{{ attrs.maxlength }}</span>
     <textarea name="{{ name }}"{% if required %} required{% endif %}{% include "floppyforms/attrs.html" %}>{% if value %}{{ value }}{% endif %}</textarea>
+    <span class="count">{{ attrs.maxlength }}</span>
 </span>
